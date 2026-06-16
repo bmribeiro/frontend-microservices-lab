@@ -1,0 +1,13 @@
+services:
+  spring-api:
+    build:
+      context: ./backend/spring-api
+      dockerfile: Dockerfile
+    container_name: frontend-lab-spring-api
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      APP_SECURITY_JWT_SECRET: change-this-secret-key-change-this-secret-key-123456
+      APP_SECURITY_JWT_ISSUER: frontend-microservices-lab
+      APP_SECURITY_JWT_EXPIRATION_MINUTES: 60
