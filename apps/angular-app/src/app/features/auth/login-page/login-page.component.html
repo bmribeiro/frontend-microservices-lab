@@ -1,0 +1,39 @@
+<section class="login-page">
+  <h1>Login</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="login-form">
+    <label>
+      Username
+      <input type="text" formControlName="username" autocomplete="username" />
+    </label>
+
+    @if (form.controls.username.touched && form.controls.username.invalid) {
+      <p class="field-error">Username é obrigatório.</p>
+    }
+
+    <label>
+      Password
+      <input
+        type="password"
+        formControlName="password"
+        autocomplete="current-password"
+      />
+    </label>
+
+    @if (form.controls.password.touched && form.controls.password.invalid) {
+      <p class="field-error">Password é obrigatória.</p>
+    }
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+
+    <button type="submit" [disabled]="loading()">
+      @if (loading()) {
+        A entrar...
+      } @else {
+        Entrar
+      }
+    </button>
+  </form>
+</section>

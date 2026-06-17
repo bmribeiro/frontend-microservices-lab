@@ -1,0 +1,19 @@
+<header class="app-header">
+  <a routerLink="/users" class="brand">angular-app</a>
+
+  @if (isAuthenticated()) {
+    <nav class="nav" aria-label="Navegação principal">
+      <a routerLink="/users" routerLinkActive="active-link">Users</a>
+
+      @if (currentUser()) {
+        <span class="user">Olá, {{ currentUser()?.username }}</span>
+      }
+
+      <button type="button" (click)="logout()">Logout</button>
+    </nav>
+  }
+</header>
+
+<main class="app-main">
+  <router-outlet />
+</main>

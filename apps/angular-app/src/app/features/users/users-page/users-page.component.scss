@@ -1,0 +1,52 @@
+.users-page {
+  display: grid;
+  gap: 24px;
+}
+
+.page-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+th {
+  background: #f3f4f6;
+  font-weight: 700;
+}
+
+.error {
+  color: #b00020;
+}
